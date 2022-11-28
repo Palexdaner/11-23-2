@@ -1,27 +1,27 @@
-#include <stdio.h>
+#include<stdio.h>
 int main()
 {
-	int a[] = { 3,-4,9,-11,-23,9,14,-7,-10,5 };
+	int a[] = { 3,-4,9,11,-23,9,14,-7,-10,5 };
 	int i;
-	printf("values before absolute:\n");
+	void absolute(int* x, int y);
+	printf("Values before absolute; ");
 	for (i = 0; i < 10; i++)
-		printf("%d", a[i]);
+		printf("%d ", a[i]);
 	printf("\n");
-	absolute (a, 10);
-	printf(" values after absolute:");
-	for (i = 0; i < 10; i++);
-	printf("%d", a[i]);
+	absolute(a, 10);
+	printf("Values after absolute: ");
+	for (i = 0; i < 10; i++)
+		printf("%d ", a[i]);
 	printf("\n");
-		return 0;
+	return 0;
 }
-void absolute(int x[], int n)
+void absolute(int* x, int y)
 {
-	int temp, i, j, m = n;
-	for (i = 0; i <= m; i++)
-	{j = n - 1 - i;
-temp = x[i]; x[i] = x[j]; x[j] = temp;
+	int i;
+	for (i = 0; i < 10; i++, x++)
+	{
+		if (*x < 0)
+			*x = -*x;
+	}
 }
-return;
-}
-	
 
